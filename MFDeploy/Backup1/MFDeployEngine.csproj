@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\Androvil\Visual Studio 2022\Projects\MfDeploy\Tools\MFDeployEngine.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66C15693-DE89-4BC4-93C7-0F9E85159F9F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MFDeployEngine</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Microsoft.NetMicroFramework.Tools.MFDeployTool.Engine</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Debugger">
+      <HintPath>lib\Microsoft.SPOT.Debugger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MFApplicationDeployment.cs" />
+    <Compile Include="CONFIG_SECTOR_VERSION.cs" />
+    <Compile Include="OEM_MODEL_SKU.cs" />
+    <Compile Include="OEM_SERIAL_NUMBERS.cs" />
+    <Compile Include="TINYBOOTER_KEY_CONFIG.cs" />
+    <Compile Include="SECTOR_BIT_FIELD.cs" />
+    <Compile Include="SECTOR_BIT_FIELD_TB.cs" />
+    <Compile Include="HAL_CONFIGURATION_SECTOR.cs" />
+    <Compile Include="HAL_CONFIG_BLOCK.cs" />
+    <Compile Include="IHAL_CONFIG_BASE.cs" />
+    <Compile Include="PublicKeyUpdateInfo.cs" />
+    <Compile Include="MFConfigHelper.cs" />
+    <Compile Include="CRC.cs" />
+    <Compile Include="MFDeploy.cs" />
+    <Compile Include="EraseOptions.cs" />
+    <Compile Include="PingConnectionType.cs" />
+    <Compile Include="DebugOutputEventArgs.cs" />
+    <Compile Include="MFDevice.cs" />
+    <Compile Include="MFUserExitException.cs" />
+    <Compile Include="MFDeviceInUseException.cs" />
+    <Compile Include="MFDeviceNoResponseException.cs" />
+    <Compile Include="MFDeviceUnknownDeviceException.cs" />
+    <Compile Include="MFInvalidNetworkAddressException.cs" />
+    <Compile Include="MFInvalidMacAddressException.cs" />
+    <Compile Include="MFInvalidFileFormatException.cs" />
+    <Compile Include="MFSignatureFailureException.cs" />
+    <Compile Include="KeyPair.cs" />
+    <Compile Include="MFKeyConfig.cs" />
+    <Compile Include="HAL_NetworkConfiguration.cs" />
+    <Compile Include="MFNetworkConfiguration.cs" />
+    <Compile Include="MFInvalidConfigurationSectorException.cs" />
+    <Compile Include="MFInvalidKeyLengthException.cs" />
+    <Compile Include="MFTinyBooterConnectionFailureException.cs" />
+    <Compile Include="MFInvalidConfigurationDataException.cs" />
+    <Compile Include="MFConfigSectorEraseFailureException.cs" />
+    <Compile Include="MFConfigSectorWriteFailureException.cs" />
+    <Compile Include="MFConfigurationSectorOutOfMemoryException.cs" />
+    <Compile Include="TransportType.cs" />
+    <Compile Include="MFPortDefinition.cs" />
+    <Compile Include="MFSerialPort.cs" />
+    <Compile Include="MFUsbPort.cs" />
+    <Compile Include="MFTcpIpPort.cs" />
+    <Compile Include="USB_CONFIG.cs" />
+    <Compile Include="MFUsbConfiguration.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Microsoft\NetMicroFramework\Tools\MFDeployTool\PlugIns\IMFDeployForm.cs" />
+    <Compile Include="Microsoft\NetMicroFramework\Tools\MFDeployTool\PlugIns\MFPlugInMenuItem.cs" />
+    <Compile Include="dotNetMFCrypto\CryptoWrapper.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
