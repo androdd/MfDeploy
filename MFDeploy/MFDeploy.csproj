@@ -1,21 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!--Project was exported from assembly: D:\Androvil\Visual Studio 2022\Projects\MfDeploy\Tools\MFDeploy.exe-->
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\Microsoft .NET Micro Framework\v4.3\Tools\MFDeploy.exe-->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B62F0CD0-1241-4ED6-A2CD-26F835E0A41E}</ProjectGuid>
+    <ProjectGuid>{CBCA6851-5555-4A8F-8793-AB21CC3217E4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AssemblyName>MFDeploy</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ApplicationVersion>4.3.1.0</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Microsoft.NetMicroFramework.Tools.MFDeployTool</RootNamespace>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,9 +41,16 @@
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArgumentParser.cs" />
+    <Compile Include="EraseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="UsbXmlConfig.cs" />
+    <Compile Include="UsbXMLConfigGet.cs" />
     <Compile Include="DeploymentStatusDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,42 +59,43 @@
     <Compile Include="MFAboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MFAppDeployConfigDialog.cs">
+    <Compile Include="MFAppDeployDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MFNetworkConfigDialog.cs">
+    <Compile Include="MFConfigNetworkDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MFUsbConfigDialog.cs">
+    <Compile Include="MFConfigUsbDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MFDeployForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Debug\DebugPlugins.cs" />
-    <Compile Include="Properties\Resources.cs" />
-    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="MFDebugTasks.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DeploymentStatusDialog.resx" />
+    <EmbeddedResource Include="EraseDialog.resx" />
     <EmbeddedResource Include="Form1.resx" />
     <EmbeddedResource Include="MFAboutBox.resx" />
     <EmbeddedResource Include="MFAppDeployConfigDialog.resx" />
     <EmbeddedResource Include="MFDeployIcon.ico" />
     <EmbeddedResource Include="MFNetworkConfigDialog.resx" />
     <EmbeddedResource Include="MFUsbConfigDialog.resx" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MFDeployEngine\MFDeployEngine.csproj">
-      <Project>{66c15693-de89-4bc4-93c7-0f9e85159f9f}</Project>
+      <Project>{991eb206-fefa-4112-b068-cce58c3b1325}</Project>
       <Name>MFDeployEngine</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

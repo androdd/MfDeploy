@@ -191,6 +191,9 @@ Copyright (c) 2007 Microsoft Corporation All rights reserved.</value>
   <data name="HelpFlagTimeout" xml:space="preserve">
     <value>- Sets timeout mode for command (if available).</value>
   </data>
+  <data name="TransportWinUsb" xml:space="preserve">
+    <value>WINUSB</value>
+  </data>
   <data name="HelpInterfaceSpecial" xml:space="preserve">
     <value>NOTE!!! If two interfaces are given the second is assumed to be for TinyBooter</value>
   </data>
@@ -403,6 +406,9 @@ Copyright (c) 2007 Microsoft Corporation All rights reserved.</value>
   <data name="WarningPlugInHasControlOfPort" xml:space="preserve">
     <value>Plug-in has control of port {0}</value>
   </data>
+  <data name="HelpInterfaceWinUsb" xml:space="preserve">
+    <value>- Identifies WinUSB port name for device.</value>
+  </data>
   <data name="HelpInterfaceTcpIp" xml:space="preserve">
     <value>- Identifies TCP/IP address for device.</value>
   </data>
@@ -494,7 +500,7 @@ Copyright (c) 2007 Microsoft Corporation All rights reserved.</value>
     <value>Old Key:</value>
   </data>
   <data name="MFDeployIcon" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA2gEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABWElEQVRYR81XAQ7CMAjc/v/omc12pZSDuziNS0zMLHCld4fdt+U5jvXdk2/2HWQ7C2ufoz1q3Hv99NSFz1q+EAIQrY1B3iDeyVFgVkgBtta4AIydPVVIy+POPQrWEvbV85FhvgTE84s/BZCTFTDfBvnv/dgioP2cOzdqpSTSG80cBM2A+aJ18UuOKwl9YXQkEUDbgSpP84MhQRSQEZP5Lco7Nk66H6sOru1WIQQJM9JZI2JBzq5IkBCZFSIkAgzsOJ8DektnTtWDqs2AioCsJJU8twqUoMoHlFyTDFGrfnIESvGqA8x0pVTASAo5pAbiX4yIIU82N5SZYs2LHkZMAW9A0jCKiGgTRO5WEZJTUDELIqJ9/Q9J5fGV1zPqgONYCUYtZiQcAtACB0M8fxRg7WqCLyYZkbJCmbua3ferUT2SM5XUIxflF++HbKs5QPDGXV9UuQLUrrcXRXwwYOHbfZQAAAAASUVORK5CYIIL</value>
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAnAEAAAKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAATFJREFUWEfNktGOAyEMA/f/f7oHBy5OcEJ2e5VuJFcwcWgfeu28Xt9NiCrnAWp2jkEVbNQXAeW903kzRLQIPvWYrTt9OYYddt/35jIbjZO76wG7kU3MZiO63/WAOytSzo2GOqsOz4Dq7JFyxMOucgbdxaHLiVPv7jsjxaUOL3qymWL1aTELeOLySDlfaWQORPfI2Ug5AiIHKt04Uq4ANcsC1MymfTyB9z5543/8gCxAzbIANbORcgREDlS6caScm43MgegeORsp94AnLs88VOBFTzZTrH5xsdKrvNPht0p/wo53lTPAro6Uc5Ng7zt+BlRnj5DAn33AyQPurDgBojsHVDxgN0IXcHKnGaj5X1bBDofreJ/NlEPs7A3LPXbJ+o6a1WJQhTxAzc4JUeW/DHNdPwX9Xi+8Zz25AAAAAElFTkSuQmCCCw==</value>
   </data>
   <data name="PrimaryDnsAddress" xml:space="preserve">
     <value>Primary DNS Address</value>
@@ -515,7 +521,7 @@ Copyright (c) 2007 Microsoft Corporation All rights reserved.</value>
     <value>Plug-in command pending, please wait</value>
   </data>
   <data name="OpenFileDialogFilterSREC" xml:space="preserve">
-    <value>SREC files (*.hex)|ER_FLASH;ER_RAM;ER_CONFIG;ER_DAT;ER_ResetVector;*.hex</value>
+    <value>SREC files (*.hex); NetMF Updates(*.nmf)|ER_FLASH;ER_RAM;ER_CONFIG;ER_DAT;ER_ResetVector;*.hex;*.nmf</value>
   </data>
   <data name="FileDialogFilterKeys" xml:space="preserve">
     <value>Key Files (*.key)|*.key|All Files (*.*)|*.*||</value>

@@ -1,21 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!--Project was exported from assembly: D:\Androvil\Visual Studio 2022\Projects\MfDeploy\Tools\MFDeployEngine.dll-->
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\Microsoft .NET Micro Framework\v4.3\Tools\MFDeployEngine.dll-->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66C15693-DE89-4BC4-93C7-0F9E85159F9F}</ProjectGuid>
+    <ProjectGuid>{991EB206-FEFA-4112-B068-CCE58C3B1325}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>MFDeployEngine</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ApplicationVersion>4.3.1.0</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Microsoft.NetMicroFramework.Tools.MFDeployTool.Engine</RootNamespace>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -27,7 +22,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,7 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SPOT.Debugger">
@@ -48,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MFApplicationDeployment.cs" />
+    <Compile Include="MFAppDeploy.cs" />
     <Compile Include="CONFIG_SECTOR_VERSION.cs" />
     <Compile Include="OEM_MODEL_SKU.cs" />
     <Compile Include="OEM_SERIAL_NUMBERS.cs" />
@@ -60,41 +53,46 @@
     <Compile Include="IHAL_CONFIG_BASE.cs" />
     <Compile Include="PublicKeyUpdateInfo.cs" />
     <Compile Include="MFConfigHelper.cs" />
-    <Compile Include="CRC.cs" />
+    <Compile Include="MFCRC.cs" />
     <Compile Include="MFDeploy.cs" />
     <Compile Include="EraseOptions.cs" />
     <Compile Include="PingConnectionType.cs" />
     <Compile Include="DebugOutputEventArgs.cs" />
+    <Compile Include="OemMonitorInfo.cs" />
     <Compile Include="MFDevice.cs" />
-    <Compile Include="MFUserExitException.cs" />
-    <Compile Include="MFDeviceInUseException.cs" />
-    <Compile Include="MFDeviceNoResponseException.cs" />
-    <Compile Include="MFDeviceUnknownDeviceException.cs" />
-    <Compile Include="MFInvalidNetworkAddressException.cs" />
-    <Compile Include="MFInvalidMacAddressException.cs" />
-    <Compile Include="MFInvalidFileFormatException.cs" />
-    <Compile Include="MFSignatureFailureException.cs" />
+    <Compile Include="MFExceptions.cs" />
+    <Compile Include="1MFExceptions.cs" />
+    <Compile Include="2MFExceptions.cs" />
+    <Compile Include="3MFExceptions.cs" />
+    <Compile Include="4MFExceptions.cs" />
+    <Compile Include="5MFExceptions.cs" />
+    <Compile Include="6MFExceptions.cs" />
+    <Compile Include="7MFExceptions.cs" />
     <Compile Include="KeyPair.cs" />
     <Compile Include="MFKeyConfig.cs" />
-    <Compile Include="HAL_NetworkConfiguration.cs" />
-    <Compile Include="MFNetworkConfiguration.cs" />
-    <Compile Include="MFInvalidConfigurationSectorException.cs" />
-    <Compile Include="MFInvalidKeyLengthException.cs" />
-    <Compile Include="MFTinyBooterConnectionFailureException.cs" />
-    <Compile Include="MFInvalidConfigurationDataException.cs" />
-    <Compile Include="MFConfigSectorEraseFailureException.cs" />
-    <Compile Include="MFConfigSectorWriteFailureException.cs" />
-    <Compile Include="MFConfigurationSectorOutOfMemoryException.cs" />
+    <Compile Include="MFNetworkConfig.cs" />
+    <Compile Include="1MFNetworkConfig.cs" />
+    <Compile Include="2MFNetworkConfig.cs" />
+    <Compile Include="3MFNetworkConfig.cs" />
+    <Compile Include="MFPlugInExceptions.cs" />
+    <Compile Include="1MFPlugInExceptions.cs" />
+    <Compile Include="2MFPlugInExceptions.cs" />
+    <Compile Include="3MFPlugInExceptions.cs" />
+    <Compile Include="4MFPlugInExceptions.cs" />
+    <Compile Include="5MFPlugInExceptions.cs" />
+    <Compile Include="6MFPlugInExceptions.cs" />
     <Compile Include="TransportType.cs" />
     <Compile Include="MFPortDefinition.cs" />
     <Compile Include="MFSerialPort.cs" />
     <Compile Include="MFUsbPort.cs" />
     <Compile Include="MFTcpIpPort.cs" />
-    <Compile Include="USB_CONFIG.cs" />
-    <Compile Include="MFUsbConfiguration.cs" />
-    <Compile Include="Properties\Resources.cs" />
-    <Compile Include="Microsoft\NetMicroFramework\Tools\MFDeployTool\PlugIns\IMFDeployForm.cs" />
-    <Compile Include="Microsoft\NetMicroFramework\Tools\MFDeployTool\PlugIns\MFPlugInMenuItem.cs" />
+    <Compile Include="HAL_SslKeyConfiguration.cs" />
+    <Compile Include="MFSslKeyConfig.cs" />
+    <Compile Include="MFUsbConfig.cs" />
+    <Compile Include="1MFUsbConfig.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="IMFDeployForm.cs" />
+    <Compile Include="MFPlugin.cs" />
     <Compile Include="dotNetMFCrypto\CryptoWrapper.cs" />
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
