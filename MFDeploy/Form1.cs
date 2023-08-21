@@ -560,7 +560,15 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             this.AddMRUFiles(this.comboBoxImageFile.Text);
         }
 
-        private void OnDbgTxt(object sender, DebugOutputEventArgs e) => this.DumpToOutput(e.Text, false);
+        private void OnDbgTxt(object sender, DebugOutputEventArgs e)
+        {
+            if (e.Text.StartsWith("Type ") && e.Text.EndsWith(" bytes\r\n"))
+            {
+                return;
+            }
+
+            this.DumpToOutput(e.Text, false);
+        }
 
         private void buttonDeploy_Click(object sender, EventArgs e)
         {
