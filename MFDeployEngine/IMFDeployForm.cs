@@ -15,8 +15,6 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool.PlugIns
 
     void DumpToOutput(string text, bool newLine);
 
-    ReadOnlyCollection<string> Files { get; }
-
     MFPortDefinition TransportTinyBooter { get; set; }
   }
 }
