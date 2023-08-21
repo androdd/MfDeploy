@@ -68,7 +68,7 @@
     <Compile Include="MFConfigUsbDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MFDeployForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NativeMethods.cs" />
@@ -80,9 +80,11 @@
   <ItemGroup>
     <EmbeddedResource Include="DeploymentStatusDialog.resx" />
     <EmbeddedResource Include="EraseDialog.resx" />
-    <EmbeddedResource Include="Form1.resx" />
     <EmbeddedResource Include="MFAboutBox.resx" />
     <EmbeddedResource Include="MFAppDeployConfigDialog.resx" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MFDeployIcon.ico" />
     <EmbeddedResource Include="MFNetworkConfigDialog.resx" />
     <EmbeddedResource Include="MFUsbConfigDialog.resx" />
