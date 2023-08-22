@@ -667,6 +667,7 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBoxDevice = new System.Windows.Forms.GroupBox();
             this.comboBoxTransport = new System.Windows.Forms.ComboBox();
             this.buttonPing = new System.Windows.Forms.Button();
@@ -682,11 +683,11 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             this.pluginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timeStampToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpTopicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMFDeployToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timeStampToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxDevice.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -847,24 +848,6 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
             this.cancelToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
             // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.timeStampToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = global::Microsoft.NetMicroFramework.Tools.MFDeployTool.Properties.Resources.ToolStripMenuOptions;
-            // 
-            // timeStampToolStripMenuItem
-            // 
-            this.timeStampToolStripMenuItem.Checked = true;
-            this.timeStampToolStripMenuItem.CheckOnClick = true;
-            this.timeStampToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.timeStampToolStripMenuItem.Name = "timeStampToolStripMenuItem";
-            this.timeStampToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.timeStampToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.timeStampToolStripMenuItem.Text = "Time Stamp";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -889,6 +872,24 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             this.aboutMFDeployToolStripMenuItem.Text = "&About MFDeploy";
             this.aboutMFDeployToolStripMenuItem.Click += new System.EventHandler(this.aboutMFDeployToolStripMenuItem_Click);
             // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timeStampToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = global::Microsoft.NetMicroFramework.Tools.MFDeployTool.Properties.Resources.ToolStripMenuOptions;
+            // 
+            // timeStampToolStripMenuItem
+            // 
+            this.timeStampToolStripMenuItem.Checked = true;
+            this.timeStampToolStripMenuItem.CheckOnClick = true;
+            this.timeStampToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.timeStampToolStripMenuItem.Name = "timeStampToolStripMenuItem";
+            this.timeStampToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.timeStampToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.timeStampToolStripMenuItem.Text = "Time Stamp";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -899,6 +900,7 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             this.Controls.Add(this.groupBoxDevice);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.richTextBoxOutput);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(395, 299);
