@@ -23,14 +23,12 @@
 *.editorconfig
 
 # Build results
-[Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
 x64/
 x86/
 bld/
-[Bb]in/
 [Oo]bj/
 [Ll]og/
 
@@ -108,3 +106,4 @@ node_modules/
 /PISPApp/UMT.CostModule.LanguagePack.RU/languagePackAssemblies/UMT.CostModule.DataProviders.Intl.resources.dll
 /PISPApp/UMT.CostModule.LanguagePack.RU/languagePackAssemblies/UMT.CostModule.Business.Intl.resources.dll
 /PISPApp/UMT.CostModule.LanguagePack.RU/languagePackAssemblies/UMT.CostModule.Administration.Intl.resources.dll
+/MFDeployEngine/bin/Debug/
