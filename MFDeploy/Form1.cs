@@ -756,14 +756,14 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             this.richTextBoxOutput.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.ReadOnly = true;
-            this.richTextBoxOutput.Size = new System.Drawing.Size(881, 643);
+            this.richTextBoxOutput.Size = new System.Drawing.Size(881, 277);
             this.richTextBoxOutput.TabIndex = 2;
             this.richTextBoxOutput.Text = "";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(24, 769);
+            this.button1.Location = new System.Drawing.Point(24, 403);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -895,7 +895,7 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(929, 809);
+            this.ClientSize = new System.Drawing.Size(929, 443);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBoxDevice);
             this.Controls.Add(this.menuStrip1);
