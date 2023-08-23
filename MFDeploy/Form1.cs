@@ -20,11 +20,14 @@ using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
 {
+    using Timer = System.Threading.Timer;
+
     public class Form1 : Form, IMFDeployForm
     {
         private MFDeploy m_deploy = new MFDeploy();
@@ -62,6 +65,7 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
         private ToolStripMenuItem cancelToolStripMenuItem1;
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem deviceCapabilitiesToolStripMenuItem;
+        private Timer _clearTimer;
 
         public Form1() => InitializeComponent();
 
@@ -324,7 +328,7 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             }
             else
             {
-                MFPortDefinition port = (MFPortDefinition)null;
+                MFPortDefinition port = null;
                 Invoke((Action)(() => port = GetSelectedItem()));
                 if (port != null)
                 {
@@ -334,11 +338,11 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
                         m_device = m_deploy.Connect(port,
                             port is MFTcpIpPort
                                 ? m_transportTinyBooter
-                                : (MFPortDefinition)null);
+                                : null);
                         m_deploy.OpenWithoutConnect = false;
                         if (m_device != null)
                         {
-                            m_device.OnDebugText += new EventHandler<DebugOutputEventArgs>(OnDbgTxt);
+                            m_device.OnDebugText += OnDbgTxt;
                             
                             comboBoxTransport.Invoke((Action)(() =>
                             {
@@ -408,23 +412,6 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             }
 
             Cursor = cursor;
-        }
-
-        private void buttonErase_Click(object sender, EventArgs e)
-        {
-            MFDevice selectedDevice = ConnectToSelectedDevice();
-            if (selectedDevice == null)
-                return;
-            EraseDialog eraseDialog = new EraseDialog(selectedDevice);
-            eraseDialog.StartPosition = FormStartPosition.CenterParent;
-            if (DialogResult.OK == eraseDialog.ShowDialog((IWin32Window)this))
-            {
-                DeploymentStatusDialog deploymentStatusDialog = new DeploymentStatusDialog(selectedDevice, eraseDialog.EraseBlocks);
-                deploymentStatusDialog.StartPosition = FormStartPosition.CenterParent;
-                int num = (int)deploymentStatusDialog.ShowDialog((IWin32Window)this);
-            }
-
-            DisconnectFromSelectedDevice();
         }
 
         private void OnDbgTxt(object sender, DebugOutputEventArgs e)
@@ -598,6 +585,22 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
                     m_deploy.OpenWithoutConnect = true;
                 ConnectToSelectedDevice();
                 Cursor = cursor;
+
+                _clearTimer = new System.Threading.Timer(
+                    state =>
+                    {
+                        Regex regex = new Regex("\\[.*\\] Type.*bytes\\n", RegexOptions.IgnoreCase);
+
+                        richTextBoxOutput.Invoke((MethodInvoker)delegate
+                        {
+                            richTextBoxOutput.Text = regex.Replace(richTextBoxOutput.Text, string.Empty);
+                            richTextBoxOutput.AppendText(string.Empty);
+                            richTextBoxOutput.ScrollToCaret();
+                        });
+                    },
+                    null,
+                    TimeSpan.FromSeconds(5),
+                    TimeSpan.FromMilliseconds(-1));
             }
             catch
             {
@@ -628,34 +631,6 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
             }
 
             m_deploy.OpenWithoutConnect = false;
-        }
-
-        private void updateSSLKeyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DumpToOutput("Updating SSL seed...", true);
-            Thread.Sleep(0);
-            Cursor cursor = Cursor;
-            Cursor = Cursors.WaitCursor;
-            try
-            {
-                MFDevice selectedDevice = ConnectToSelectedDevice();
-                if (selectedDevice == null)
-                    return;
-                new MFSslKeyConfig(selectedDevice).Save();
-            }
-            catch
-            {
-                int num = (int)MessageBox.Show(Resources.ErrorDeviceNotResponding,
-                    Resources.TitleAppDeploy,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Hand);
-            }
-            finally
-            {
-                DisconnectFromSelectedDevice();
-                Cursor = cursor;
-                DumpToOutput("Update Complete!", true);
-            }
         }
 
         protected override void Dispose(bool disposing)
