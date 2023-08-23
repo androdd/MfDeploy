@@ -594,7 +594,7 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
                         richTextBoxOutput.Invoke((MethodInvoker)delegate
                         {
                             richTextBoxOutput.Text = regex.Replace(richTextBoxOutput.Text, string.Empty);
-                            richTextBoxOutput.AppendText(string.Empty);
+                            richTextBoxOutput.AppendText(" "); // Hack to force scroll. Ghost space may appear in the output.
                             richTextBoxOutput.ScrollToCaret();
                         });
                     },
