@@ -416,7 +416,9 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
 
         private void OnDbgTxt(object sender, DebugOutputEventArgs e)
         {
-            if (e.Text.StartsWith("Type ") && e.Text.EndsWith(" bytes\r\n"))
+            File.AppendAllText("d:\\temp\\dbglog " + DateTime.Now.ToString("yy-MM-dd") + ".txt", e.Text);
+
+            if (e.Text.StartsWith("Type ") && (e.Text.EndsWith(" bytes\r\n") || e.Text.EndsWith(" bytes\n")))
             {
                 return;
             }
@@ -589,7 +591,7 @@ namespace Microsoft.NetMicroFramework.Tools.MFDeployTool
                 _clearTimer = new System.Threading.Timer(
                     state =>
                     {
-                        Regex regex = new Regex("\\[.*\\] Type.*bytes\\n", RegexOptions.IgnoreCase);
+                        Regex regex = new Regex("\\[.*\\] Type.*bytes\\r?\\n", RegexOptions.IgnoreCase);
 
                         richTextBoxOutput.Invoke((MethodInvoker)delegate
                         {
